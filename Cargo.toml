@@ -11,4 +11,5 @@ members = [
     "map_replace_tool",
     "npc_replace_tool",
     "npcitem_replace_tool",
+    "big_map_replace_tool",
 ]
