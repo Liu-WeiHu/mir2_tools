@@ -82,7 +82,7 @@ fn main() -> std::io::Result<()> {
     content = content.replace("I'm ready.", "我准备好了.");
     content = content.replace("Proceed.", "继续");
     content = content.replace("I've had enough. Let me go.", "我受够了，让我走。");
-    content = content.replace("MOVE 0 355 237", "MOVE n0 328 625");
+    content = content.replace("MOVE 0 355 237", "MOVE n0 328 265");
     content = content.replace("BenedictionOil", "祝福油");
 
     let re = Regex::new(r"(MonGen\s)(.+)(\s\d)").unwrap();
