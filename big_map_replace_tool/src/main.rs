@@ -1,4 +1,3 @@
-use regex::Captures;
 use std::fs::File;
 use std::io::{Read, Write};
 
@@ -13,7 +12,7 @@ fn main() {
     let re = regex::Regex::new(r"(.+MINIMAP\()(.+)(\)\sBIGMAP\()(.+)(\)\sMAPLIGHT)").unwrap();
 
     let s = re
-        .replace_all(&content, |cap: &Captures| {
+        .replace_all(&content, |cap: &regex::Captures| {
             format!(
                 "{}{}{}{}{}",
                 cap.get(1).unwrap().as_str(),
