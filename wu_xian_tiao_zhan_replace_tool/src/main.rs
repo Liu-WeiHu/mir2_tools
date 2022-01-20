@@ -75,15 +75,6 @@ fn main() -> std::io::Result<()> {
     ];
 
     let mut content = String::new();
-    content = content.replace(
-        "You have already completed this quest!",
-        "你已经完成了这个任务!",
-    );
-    content = content.replace("I'm ready.", "我准备好了.");
-    content = content.replace("Proceed.", "继续");
-    content = content.replace("I've had enough. Let me go.", "我受够了，让我走。");
-    content = content.replace("MOVE 0 355 237", "MOVE n0 328 265");
-    content = content.replace("BenedictionOil", "祝福油");
 
     let re = Regex::new(r"(MonGen\s)(.+)(\s\d)").unwrap();
     let re1 = Regex::new(r"(Welcome[\.a-zA-Z0-9\s',!]*start the challenge\?)").unwrap();
@@ -94,6 +85,16 @@ fn main() -> std::io::Result<()> {
     for p in paths {
         let mut file = File::open(p).unwrap();
         file.read_to_string(&mut content).unwrap();
+
+        content = content.replace(
+            "You have already completed this quest!",
+            "你已经完成了这个任务!",
+        );
+        content = content.replace("I'm ready.", "我准备好了.");
+        content = content.replace("Proceed.", "继续");
+        content = content.replace("I've had enough. Let me go.", "我受够了，让我走。");
+        content = content.replace("MOVE 0 355 237", "MOVE n0 328 265");
+        content = content.replace("BenedictionOil", "祝福油");
 
         let content = re
             .replace_all(&content, |cap: &Captures| {
