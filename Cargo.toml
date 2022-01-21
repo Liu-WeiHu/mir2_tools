@@ -13,4 +13,5 @@ members = [
     "npcitem_replace_tool",
     "big_map_replace_tool",
     "wu_xian_tiao_zhan_replace_tool",
+    "add_drops_tool",
 ]

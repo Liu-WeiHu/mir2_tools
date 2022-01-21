@@ -3,6 +3,14 @@
 version = 3
 
 [[package]]
+name = "add_drops_tool"
+version = "0.1.0"
+dependencies = [
+ "regex",
+ "walkdir",
+]
+
+[[package]]
 name = "aho-corasick"
 version = "0.7.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
